@@ -11,7 +11,7 @@ class FirstToXboxScorePlayer:
     # STEPS TO USE THE SCRIPT:\n
     **game uuid**: b1cl5bm0hs7uu7e8rn02h8hzo, **playerId**: 5a26i35oyvyj8xpo9kr86mmeh \n
     **1. Load the game** in: https://api.performfeeds.com/basketballdata/matchstats/mcp6s4o523yuz4q2i7bcv9c6/b1cl5bm0hs7uu7e8rn02h8hzo?_rt=b&_fmt=xml \n
-    **2. Get the date of the game and go to optaLive**: https://live.opta.statsperform.com/basketball , select the date ond the league to narrow down the search \n
+    **2. Get the date of the game and go to optaLive**: https://live.opta.statsperform.com/basketball , select the date and the league to narrow down the search \n
     **3. Find the game and click on the game** - look for the gameId: 2694505 (it's also in the link) \n
     **4. Use the gameId in this script** to verify the results \n
     \n
