@@ -11,8 +11,8 @@ class FirstToXboxScorePlayer:
     # STEPS TO USE THE SCRIPT:\n
     **game uuid**: b1cl5bm0hs7uu7e8rn02h8hzo, **playerId**: 5a26i35oyvyj8xpo9kr86mmeh \n
     **1. Load the game** in: https://api.performfeeds.com/basketballdata/matchstats/mcp6s4o523yuz4q2i7bcv9c6/b1cl5bm0hs7uu7e8rn02h8hzo?_rt=b&_fmt=xml \n
-    **2. Get the date of the game and go to optaLive**: https://live.opta.statsperform.com/basketball?b1cl5bm0hs7uu7e8rn02h8hzo=&from=2025-03-07&to=2025-03-07 and select the date range ond the league \n
-    **3. Find the game and click on the game** - look for the gameId: 2694505 (also it's in the link) \n
+    **2. Get the date of the game and go to optaLive**: https://live.opta.statsperform.com/basketball , select the date ond the league to narrow down the search \n
+    **3. Find the game and click on the game** - look for the gameId: 2694505 (it's also in the link) \n
     **4. Use the gameId in this script** to verify the results \n
     \n
     # NOTES:\n
@@ -368,8 +368,8 @@ class FirstToXboxScorePlayer:
 if __name__ == '__main__':
     BASE_URL = "https://prod.origin.api.stats.com/v1/stats/basketball/NBA/events/"
     STAT_KEYS = ['scoredPoints'] # enter: 'freeThrowAttempts, fieldGoalAttempts, rebounds, scoredPoints
-    THRESHOLD = 10
-    GAMES = [2694505]
+    THRESHOLD = 1
+    GAMES = [2693599]
 
     logger = ResultLogger(stat_key=",".join(STAT_KEYS), stat_labels=FirstToXboxScorePlayer.STAT_LABELS)
 
