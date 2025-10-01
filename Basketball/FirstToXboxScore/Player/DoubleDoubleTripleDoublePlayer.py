@@ -279,38 +279,6 @@ class DoubleDoubleTripleDoublePlayer:
         labels = {2: "Double-double", 3: "Triple-double", 4: "Quadruple-double", 5: "Quintuple-double"}
         return [f"{labels[level]}: {self._format_combo(q[:level])}" for level in range(2, min(n, 5) + 1)]
 
-    def _print_achievements(self, game_id: int, totals: Dict[str, Dict[str, int]],
-                            player_names: Dict[str, str]) -> None:
-        if not self.logger:
-            return
-
-        width = 120
-        rule_hard = "=" * width
-        rule_soft = "-" * width
-
-        self.logger.log_line(Fore.CYAN + rule_hard + Style.RESET_ALL)
-        self.logger.log_line(Fore.CYAN + f"Game Summary: {game_id}" + Style.RESET_ALL)
-        self.logger.log_line(rule_soft)
-        self.logger.log_line(f"{'PlayerId':<12} {'PlayerName':<30} | Achievements")
-        self.logger.log_line(rule_soft)
-
-        any_line = False
-        ordered_pids = sorted(totals.keys(), key=lambda x: int(x))
-        for pid in ordered_pids:
-            lines = self._achievement_lines(totals[pid])
-            if not lines:
-                continue
-            any_line = True
-            combined = "; ".join(lines)
-            pname = player_names.get(pid, "")
-            self.logger.log_line(f"{pid:<12} {pname:<30} | {combined}")
-
-        if not any_line:
-            self.logger.log_line("No double/triple/quadruple/quintuple achievements detected")
-
-        self.logger.log_line(Fore.CYAN + rule_hard + Style.RESET_ALL)
-        self.logger.log_line("")  # spacer
-
     # =========================
     # Player name extraction
     # =========================
@@ -555,7 +523,6 @@ class DoubleDoubleTripleDoublePlayer:
 
         self.logger.log_line(Fore.CYAN + rule_hard + Style.RESET_ALL)
         self.logger.log_line("")
-
 
 if __name__ == '__main__':
     BASE_URL = "https://prod.origin.api.stats.com/v1/stats/basketball/NBA/events"
